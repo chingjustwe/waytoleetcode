@@ -1,6 +1,8 @@
 package cn.com.nightfield;
 
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Random;
 
 /**
@@ -14,7 +16,7 @@ import java.util.Random;
  *
  **/
 public class TwoSum {
-    public int[] twoSum(int[] nums, int target) {
+    public int[] twoSum1(int[] nums, int target) {
         int length = nums.length;
         if (length < 2) {
             throw new RuntimeException("Illegal input param.");
@@ -26,6 +28,32 @@ public class TwoSum {
                     return new int[]{i, j};
                 }
             }
+        }
+
+        throw new RuntimeException("Did not find matched elements.");
+    }
+
+    public int[] twoSum2(int[] nums, int target) {
+        int length = nums.length;
+        if (length < 2) {
+            throw new RuntimeException("Illegal input param.");
+        }
+
+        Map<Integer, Integer> map = new HashMap<>(length);
+        for (int i = 0; i < length; i++) {
+            Integer index = map.get(nums[i]);
+            // handle cases like ([3,2,3], 6)
+            if (map.get(nums[i]) != null && nums[i] * 2 == target) { // duplicate
+                return new int[]{index, i};
+            }
+
+            map.put(nums[i], i);
+
+            int remain = target - nums[i];
+            index = map.get(remain);
+            if (index != null && index != i) {
+                return new int[]{index, i};
+            };
         }
 
         throw new RuntimeException("Did not find matched elements.");
@@ -48,11 +76,12 @@ public class TwoSum {
         int target = nums[index1] + nums[index2];
         System.out.println("target: " + target);
 
-        System.out.println("index1: " + index1 + ", index2: " + index2);
+        System.out.println("expect1: " + index1 + ", expect2: " + index2);
 
-        int[] result = twoSum.twoSum(nums, target);
+        //int[] result = twoSum.twoSum1(nums, target);
+        int[] result = twoSum.twoSum2(nums, target);
 
-        System.out.println("index1: " + result[0] + ", index2: " + result[1]);
+        System.out.println("result1: " + result[0] + ", result2: " + result[1]);
 
         assert index1 == result[0];
         assert index2 == result[1];
