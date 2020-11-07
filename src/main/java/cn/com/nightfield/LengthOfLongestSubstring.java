@@ -10,6 +10,10 @@ import java.util.Random;
  *
  * https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/
  * 给定一个字符串，请你找出其中不含有重复字符的 最长子串 的长度
+ *
+ * 思路：
+ * 新建一个HashMap，存放字符串的字符和其下标，用来判断是否有重复字符。遍历字符串，直到发现有重复字符为止，记录下HashMap的长度。
+ * 继续从重复字符的其实位置遍历字符串，直到结束，找到过程中HashMap的最大可能长度，即为结果。
  **/
 public class LengthOfLongestSubstring {
     public int lengthOfLongestSubstring(String s) {
