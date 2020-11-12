@@ -14,7 +14,7 @@ package cn.com.nightfield;
  * 双指针法，left指针从前往后遍历，right指针从后往前遍历，计算过程中两个指针扫过的面积中最大的那个。
  **/
 public class MaxArea {
-    public int maxArea(int[] height) {
+    public int solution(int[] height) {
         int left = 0, right = height.length - 1, maxArea = 0;
         while (left <= right) {
             int currentArea = (height[left] > height[right] ? height[right] : height[left]) * (right - left);
@@ -39,9 +39,9 @@ public class MaxArea {
         int[] arr4 = new int[]{1,2,1};
 
         MaxArea maxArea = new MaxArea();
-        assert maxArea.maxArea(arr1) == 49;
-        assert maxArea.maxArea(arr2) == 1;
-        assert maxArea.maxArea(arr3) == 16;
-        assert maxArea.maxArea(arr4) == 2;
+        assert maxArea.solution(arr1) == 49;
+        assert maxArea.solution(arr2) == 1;
+        assert maxArea.solution(arr3) == 16;
+        assert maxArea.solution(arr4) == 2;
     }
 }

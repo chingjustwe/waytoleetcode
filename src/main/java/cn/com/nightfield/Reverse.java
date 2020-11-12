@@ -16,7 +16,7 @@ import java.util.Random;
  * 2. 为了处理int溢出的情况，先将int转化为long，如果最后结果比Integer.MAX_VALUE大，说明溢出了，直接返回0
  **/
 public class Reverse {
-    public int reverse(int x) {
+    public int solution(int x) {
         long l = x;// cast to long to handle overflow
         int sign = l < 0 ? -1 : 1;
         if (l < 0) {
@@ -39,6 +39,6 @@ public class Reverse {
         Reverse reverse = new Reverse();
         int i = new Random().nextInt();
         System.out.println(i);
-        System.out.println(reverse.reverse(i));
+        System.out.println(reverse.solution(i));
     }
 }

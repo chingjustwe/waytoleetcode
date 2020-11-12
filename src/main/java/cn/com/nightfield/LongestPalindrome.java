@@ -14,7 +14,7 @@ import java.util.Random;
  *
  **/
 public class LongestPalindrome {
-    public String longestPalindrome(String s) {
+    public String solution(String s) {
         if (s == null || s.isEmpty()) {
             return s;
         }
@@ -75,6 +75,6 @@ public class LongestPalindrome {
         String s = sb.toString();
         s = "bbbbbba";
         System.out.println(s);
-        System.out.println(longestPalindrome.longestPalindrome(s));
+        System.out.println(longestPalindrome.solution(s));
     }
 }

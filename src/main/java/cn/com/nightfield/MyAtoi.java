@@ -24,7 +24,7 @@ import java.util.Random;
  * 3. 先用long类型存放结果，用来判断是否有溢出
  **/
 public class MyAtoi {
-    public int myAtoi(String s) {
+    public int solution(String s) {
         int minChar = '0', maxChar = '9', negativeChar = '-', positiveChar = '+', spaceChar = ' ', sign = 0;
         long result = 0;
         for (int i = 0; i < s.length(); i++) {
@@ -77,6 +77,6 @@ public class MyAtoi {
 
         String s = sb.toString();
         System.out.println(s);
-        System.out.println(myAtoi.myAtoi(s));
+        System.out.println(myAtoi.solution(s));
     }
 }

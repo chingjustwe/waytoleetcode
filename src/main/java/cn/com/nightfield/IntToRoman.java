@@ -26,7 +26,7 @@ package cn.com.nightfield;
  * 过程就是：将目标数字不断地去减构造出来的单位数组，被减一次，就append一次对应的字符。
  **/
 public class IntToRoman {
-    public String intToRoman(int num) {
+    public String solution(int num) {
         if (num > 3999 || num < 1) {
             throw new RuntimeException("invalid input.");
         }
@@ -68,10 +68,10 @@ public class IntToRoman {
 
     public static void main(String[] args) {
         IntToRoman itr = new IntToRoman();
-        System.out.println("3: " + itr.intToRoman(3));
-        System.out.println("4: " + itr.intToRoman(4));
-        System.out.println("9: " + itr.intToRoman(9));
-        System.out.println("58: " + itr.intToRoman(58));
-        System.out.println("1994: " + itr.intToRoman(1994));
+        System.out.println("3: " + itr.solution(3));
+        System.out.println("4: " + itr.solution(4));
+        System.out.println("9: " + itr.solution(9));
+        System.out.println("58: " + itr.solution(58));
+        System.out.println("1994: " + itr.solution(1994));
     }
 }

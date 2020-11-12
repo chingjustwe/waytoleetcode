@@ -18,7 +18,7 @@ import java.util.Random;
  * 要找的结果。
  **/
 public class TwoSum {
-    public int[] twoSum1(int[] nums, int target) {
+    public int[] solution1(int[] nums, int target) {
         int length = nums.length;
         if (length < 2) {
             throw new RuntimeException("Illegal input param.");
@@ -35,7 +35,7 @@ public class TwoSum {
         throw new RuntimeException("Did not find matched elements.");
     }
 
-    public int[] twoSum2(int[] nums, int target) {
+    public int[] solution2(int[] nums, int target) {
         int length = nums.length;
         if (length < 2) {
             throw new RuntimeException("Illegal input param.");
@@ -81,7 +81,7 @@ public class TwoSum {
         System.out.println("expect1: " + index1 + ", expect2: " + index2);
 
         //int[] result = twoSum.twoSum1(nums, target);
-        int[] result = twoSum.twoSum2(nums, target);
+        int[] result = twoSum.solution2(nums, target);
 
         System.out.println("result1: " + result[0] + ", result2: " + result[1]);
 

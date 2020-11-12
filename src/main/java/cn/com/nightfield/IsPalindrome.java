@@ -14,7 +14,7 @@ import java.util.Random;
  * 将数字反转之后，判断是否与原数字相等
  **/
 public class IsPalindrome {
-    public boolean isPalindrome(int x) {
+    public boolean solution(int x) {
         if (x < 0) {
             return false;
         }
@@ -33,8 +33,8 @@ public class IsPalindrome {
     public static void main(String[] args) {
         IsPalindrome isPalindrome = new IsPalindrome();
 
-        System.out.println("121:" + isPalindrome.isPalindrome(121));
-        System.out.println("-121" + isPalindrome.isPalindrome(-121));
-        System.out.println("10" + isPalindrome.isPalindrome(10));
+        System.out.println("121:" + isPalindrome.solution(121));
+        System.out.println("-121" + isPalindrome.solution(-121));
+        System.out.println("10" + isPalindrome.solution(10));
     }
 }

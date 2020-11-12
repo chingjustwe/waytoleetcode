@@ -18,7 +18,7 @@ import java.util.Random;
  *
  **/
 public class AddTwoNumbers {
-    public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+    public ListNode solution(ListNode l1, ListNode l2) {
         if (l1 == null) {
             return l2;
         }
@@ -71,7 +71,7 @@ public class AddTwoNumbers {
         }
         print(ln1);
         print(ln2);
-        ListNode listNode = addTwoNumbers.addTwoNumbers(ln1, ln2);
+        ListNode listNode = addTwoNumbers.solution(ln1, ln2);
         print(listNode);
     }
 

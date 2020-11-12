@@ -16,7 +16,7 @@ import java.util.Random;
  * 继续从重复字符的其实位置遍历字符串，直到结束，找到过程中HashMap的最大可能长度，即为结果。
  **/
 public class LengthOfLongestSubstring {
-    public int lengthOfLongestSubstring(String s) {
+    public int solution(String s) {
         int maxLength = 0;
         Map<Character, Integer> container = new HashMap<>();
         int start = 0;
@@ -67,6 +67,6 @@ public class LengthOfLongestSubstring {
 
         String s = sb.toString();
         System.out.println(s);
-        System.out.println(lengthOfLongestSubstring.lengthOfLongestSubstring(s));
+        System.out.println(lengthOfLongestSubstring.solution(s));
     }
 }
