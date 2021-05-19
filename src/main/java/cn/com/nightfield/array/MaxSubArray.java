@@ -1,4 +1,4 @@
-package cn.com.nightfield.problems;
+package cn.com.nightfield.array;
 
 /**
  * @author: zhochi
