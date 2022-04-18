@@ -1,5 +1,6 @@
 package cn.com.nightfield.array;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -15,7 +16,32 @@ import java.util.List;
  *
  **/
 public class CombinationSum {
-    public List<List<Integer>> solution(int[] candidates, int target) {
+    int[] candidates;
+    int target;
+    List<List<Integer>> result;
 
+    public List<List<Integer>> solution(int[] candidates, int target) {
+        this.candidates = candidates;
+        this.target = target;
+        this.result = new ArrayList<>();
+        traceBack(0, new ArrayList<>(), 0);
+        return result;
+    }
+
+    private List<Integer> traceBack(int prevSum, List<Integer> prevList, int currentIndex) {
+        int currentSum = prevSum + candidates[currentIndex];
+        if (currentSum == target) {
+            result.add(prevList);
+            return new ArrayList<>();
+        }
+
+        for (int i = currentIndex; i < candidates.length; i++) {
+            if (currentSum > target) {
+                break;
+            }
+            prevList.add(candidates[currentIndex]);
+            traceBack(currentSum, prevList, currentIndex);
+        }
+        return prevList;
     }
 }

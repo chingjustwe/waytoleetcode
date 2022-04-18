@@ -1,6 +1,4 @@
-package cn.com.nightfield;
-
-import java.util.Random;
+package cn.com.nightfield.number;
 
 /**
  * @author: zhochi

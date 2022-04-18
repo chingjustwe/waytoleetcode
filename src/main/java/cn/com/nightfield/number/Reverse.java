@@ -1,4 +1,4 @@
-package cn.com.nightfield;
+package cn.com.nightfield.number;
 
 import java.util.Random;
 
