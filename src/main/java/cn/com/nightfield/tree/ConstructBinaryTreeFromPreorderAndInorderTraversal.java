@@ -15,6 +15,11 @@ import java.util.Map;
  *
  **/
 public class ConstructBinaryTreeFromPreorderAndInorderTraversal {
+    public static void main(String[] args) {
+        TreeNode result = new ConstructBinaryTreeFromPreorderAndInorderTraversal().buildTree(new int[] {1, 2}, new int[] {1, 2});
+        System.out.println(result);
+    }
+
     public TreeNode buildTree(int[] preorder, int[] inorder) {
         if (preorder == null || preorder.length == 0) {
             return null;
@@ -27,17 +32,17 @@ public class ConstructBinaryTreeFromPreorderAndInorderTraversal {
         return build(inIndexMap, preorder, inorder, 0, preorder.length - 1, 0, preorder.length - 1);
     }
 
-    private TreeNode build(Map<Integer, Integer> inIndexMap, int[] preorder, int[] inorder, int preLeft, int preRight, int inLeft, int inRight) {
-        if (preLeft > preRight) {
+    private TreeNode build(Map<Integer, Integer> inIndexMap, int[] preorder, int[] inorder, int pStart, int pEnd, int iStart, int iEnd) {
+        if (pStart > pEnd) {
             return null;
         }
 
-        int rootValue = preorder[preLeft];
+        int rootValue = preorder[pStart];
         int rootIndex = inIndexMap.get(rootValue);
 
         TreeNode root = new TreeNode(rootValue);
-        root.left = build(inIndexMap, preorder, inorder, preLeft + 1, preLeft + rootIndex - inLeft, inLeft, rootIndex - 1);
-        root.right = build(inIndexMap, preorder, inorder, preLeft + rootIndex - inLeft + 1, preRight, rootIndex + 1, inRight);
+        root.left = build(inIndexMap, preorder, inorder, pStart + 1, pStart + rootIndex - iStart, iStart, rootIndex - 1);
+        root.right = build(inIndexMap, preorder, inorder, pStart + rootIndex - iStart + 1, pEnd, rootIndex + 1, iEnd);
         return root;
     }
 }
